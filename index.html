@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyDesk – Fluxo de Suporte Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>EasyDesk</h1>
+        <p>Fluxo de Suporte Inteligente</p>
+    </header>
+
+    <main class="app-container">
+        <!-- Formulário de Registro (Marco 1) -->
+        <section class="form-section">
+            <h2>Novo Chamado</h2>
+            <form id="ticket-form">
+                <div class="form-group">
+                    <label for="solicitante">Nome do Solicitante</label>
+                    <input type="text" id="solicitante" required placeholder="Ex: Maria Silva">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição do Problema</label>
+                    <textarea id="descricao" required placeholder="Descreva o problema técnico detalhadamente..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="prioridade">Nível de Prioridade</label>
+                    <select id="prioridade" required>
+                        <option value="Baixa">Baixa</option>
+                        <option value="Média">Média</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Registrar Chamado</button>
+            </form>
+        </section>
+
+        <!-- Painel de Controle e Filtros (Marco 3) -->
+        <section class="dashboard-section">
+            <h2>Painel de Controle</h2>
+            
+            <div class="filter-controls">
+                <input type="text" id="search-bar" placeholder="Buscar por solicitante ou descrição...">
+                
+                <div class="filter-buttons">
+                    <button class="btn-filter active" data-filter="Todos">Todos</button>
+                    <button class="btn-filter" data-filter="Pendente">Pendentes</button>
+                    <button class="btn-filter" data-filter="Em Progresso">Em Progresso</button>
+                    <button class="btn-filter" data-filter="Concluído">Concluídos</button>
+                </div>
+            </div>
+
+            <!-- Lista de Cards Dinâmicos (Marco 1 e Marco 2) -->
+            <div id="tickets-container" class="tickets-grid">
+                <!-- Os cards de chamados serão injetados dinamicamente via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
